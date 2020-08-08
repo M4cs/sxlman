@@ -27,25 +27,25 @@ func main() {
 	var config Config
 	firstRun := false
 	user, _ := user.Current()
-	if _, err := os.Stat(user.HomeDir + "\\Documents\\ModIODownloader"); os.IsNotExist(err) {
-		err := os.MkdirAll(user.HomeDir+"\\Documents\\ModIODownloader", 0777)
+	if _, err := os.Stat(user.HomeDir + "\\Documents\\sxlman"); os.IsNotExist(err) {
+		err := os.MkdirAll(user.HomeDir+"\\Documents\\sxlman", 0777)
 		if err != nil {
 			fmt.Println("Could not create config directory!")
 		}
 		config = createNewConfig()
 		file, _ := json.MarshalIndent(config, "", " ")
 		firstRun = true
-		_ = ioutil.WriteFile(user.HomeDir+"\\Documents\\ModIODownloader\\config.json", file, 0644)
-		fmt.Println("Please Enter API Key for mod.io in " + user.HomeDir + "\\Documents\\ModIODownloader\\config.json" + "!")
+		_ = ioutil.WriteFile(user.HomeDir+"\\Documents\\sxlman\\config.json", file, 0644)
+		fmt.Println("Please Enter API Key for mod.io in " + user.HomeDir + "\\Documents\\sxlman\\config.json" + "!")
 	}
-	if _, err := os.Stat(user.HomeDir + "\\Documents\\ModIODownloader\\config.json"); os.IsNotExist(err) {
+	if _, err := os.Stat(user.HomeDir + "\\Documents\\sxlman\\config.json"); os.IsNotExist(err) {
 		config = createNewConfig()
 		file, _ := json.MarshalIndent(config, "", " ")
 		firstRun = true
-		_ = ioutil.WriteFile(user.HomeDir+"\\Documents\\ModIODownloader\\config.json", file, 0644)
-		fmt.Println("Please Enter API Key for mod.io in " + user.HomeDir + "\\Documents\\ModIODownloader\\config.json" + "!")
+		_ = ioutil.WriteFile(user.HomeDir+"\\Documents\\sxlman\\config.json", file, 0644)
+		fmt.Println("Please Enter API Key for mod.io in " + user.HomeDir + "\\Documents\\sxlman\\config.json" + "!")
 	}
-	configFile, err := os.Open(user.HomeDir + "\\Documents\\ModIODownloader\\config.json")
+	configFile, err := os.Open(user.HomeDir + "\\Documents\\sxlman\\config.json")
 	if err != nil {
 		log.Fatal("Error Opening Config File", err.Error())
 	}
@@ -95,5 +95,5 @@ func createNewConfig() Config {
 func updateConfig(config Config) {
 	user, _ := user.Current()
 	file, _ := json.MarshalIndent(config, "", " ")
-	_ = ioutil.WriteFile(user.HomeDir+"\\Documents\\ModIODownloader\\config.json", file, 0644)
+	_ = ioutil.WriteFile(user.HomeDir+"\\Documents\\sxlman\\config.json", file, 0644)
 }

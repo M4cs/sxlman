@@ -101,7 +101,7 @@ func searchMods(query string, config Config) Results {
 func storeModToConfig(config Config) {
 	user, _ := user.Current()
 	file, _ := json.MarshalIndent(config, "", " ")
-	_ = ioutil.WriteFile(user.HomeDir+"\\Documents\\ModIODownloader\\config.json", file, 0644)
+	_ = ioutil.WriteFile(user.HomeDir+"\\Documents\\sxlman\\config.json", file, 0644)
 }
 
 func trackMod(mod Mods, config Config) {
