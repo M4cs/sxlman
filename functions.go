@@ -19,7 +19,7 @@ func displaySearchResults(res Results) {
 		fmt.Println("ID: " + fmt.Sprint(mod.ID))
 		fmt.Println("")
 	}
-	fmt.Println("Run sxl-tracker.exe --track --id {ID} to track a mod!")
+	fmt.Println("Run sxlman --track --id {ID} to track a mod!")
 }
 
 func untrackMods(modID string, config Config) {
