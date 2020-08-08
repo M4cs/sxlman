@@ -5,6 +5,8 @@ A command line tool for downloading/updating Skater XL mods from mod.io
 
 This is a tool you use from your command line to keep up to date with SXL Mods. It will allow you to track mods from mod.io and then check periodically for updates and then download those updates for you. It helps keep you playing the most stable, up to date mods without needing to check mod.io constantly. Just focus on what you want and get it simply.
 
+### [Video Demo for Installation/Setup/Usage](https://www.youtube.com/watch?v=OR2E0yJgBLY&feature=youtu.be)
+
 # Installation
 
 There are two ways of installing sxlman.
