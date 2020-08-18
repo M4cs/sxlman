@@ -24,4 +24,5 @@ type Config struct {
 	TrackedPackages []Mods `json:"tracking"`
 	DownloadFolder  string `json:"downloadFolder"`
 	AutoUpdate      bool   `json:"autoUpdate"`
+	GamePath        string `json:"gamePath"`
 }

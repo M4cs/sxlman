@@ -20,6 +20,7 @@ func main() {
 	u := parser.Flag("c", "update", &argparse.Options{Help: "Check for Updates"})
 	dl := parser.Flag("d", "download", &argparse.Options{Help: "Download a mod"})
 	list := parser.Flag("l", "list", &argparse.Options{Help: "List Tracked Packages"})
+	install := parser.String("a", "install", &argparse.Options{Help: "Install A ZIP of A Mod"})
 	err := parser.Parse(os.Args)
 	if err != nil {
 		fmt.Print(parser.Usage(err))
@@ -56,6 +57,9 @@ func main() {
 	if config.AutoUpdate && !firstRun && (len(config.TrackedPackages) > 0) {
 		checkForUpdates(config)
 	}
+	if *install != "" {
+		installMod(*install, config)
+	}
 	if *list {
 		listTracked(config)
 	}
@@ -89,6 +93,7 @@ func createNewConfig() Config {
 	config.DownloadFolder = user.HomeDir + "\\Downloads"
 	config.TrackedPackages = []Mods{}
 	config.AutoUpdate = true
+	config.GamePath = ""
 	return config
 }
 
